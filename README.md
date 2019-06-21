@@ -143,11 +143,6 @@ una herramienta que funciona en el navegador y, además, puedes crear una cuenta
 gratis. Sin embargo, eres libre de utilizar otros editores gráficos como
 Illustrator, Photoshop, PowerPoint, Keynote, etc.
 
-El diseño debe representar el _ideal_ de tu solución. Digamos que es lo que
-desearías implementar si tuvieras tiempo ilimitado para hackear. Además, tu
-diseño debe seguir los fundamentos de _visual design_. También, te recomendamos exportar
-tu diseño a [Zeplin](https://zeplin.io/) y podrías utilizar las especificaciones de
-estilo que te proporcione Zeplin al momento de implementar tus diseños en código.
 
 #### Testeos de usabilidad
 
