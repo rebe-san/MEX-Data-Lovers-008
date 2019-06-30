@@ -2,7 +2,8 @@
 // puedes ver como agregamos la función a nuestro objeto global window
 
 const example = () => {
-  return 'example';
+  return POKEMON.pokemon;
 };
 
 window.example = example;
+
