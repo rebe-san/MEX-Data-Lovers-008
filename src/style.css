@@ -1,0 +1,29 @@
+body{
+    margin: 0; 
+  }
+
+#indexp {
+    background-image: url;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #26A3BF;
+    height: 100vh;
+    font-family: 'Jua', sans-serif;
+    text-align: center;
+    padding:25px;
+  }
+
+  footer {
+    min-height: 20px;
+    background-color:none;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+  }
+  
