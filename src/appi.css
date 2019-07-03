@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;/*ocupa todo el ancho del dispositivo*/
+    height: auto;
+    border: 2px solid black;
+    text-align: center;
+    background-color: aqua;
+    display: block;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.container > div{/*modifica los div dentro del contenedor*/
+    background-color: pink;
+}
