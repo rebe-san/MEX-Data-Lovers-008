@@ -2,23 +2,50 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Tu layout se mostrará correctamente a una escala de 1:1 Ningún zoom será aplicado-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!--vista de compatibilidad permite al usuario o al navegador establecer el modo de compatibilidad-->
+    <link rel="icon" type="image/img" href="./img/pokebola2.png"> <!--rel="shortcut icon" es para crear un favicon-->
+    <link rel="stylesheet" type="text/css" href="style.css" /> <!-- rel="stylesheet" Indica que se une una hoja de estilo; type="text/css" indica que es un archivo de texto en sintaxis CSS; href="style.css" nombre del archivo a enlazar.-->
+    <link rel="stylesheet" type="text/css" href="grid.css" /> 
     <title>¿Quién es ese pokémon?</title>
   </head>
   <body>
-    <section id="indexp">
-          <h1>¡Bienvenid@!</h1>
-          <p>Conoce a los pokémon de la región de Kanto</p>
-          <br>
-          <button type="button" id="buttonGo">GO</button>
-          <br>
-    <div id="root"></div>
-    <script src="welcome.js"></script>
+    <div class="header">
+      <p>¿Quién es ese pokémon?</p>
+    </div>
+    <div class="contenedor">
+     <div class="row">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+      <div>11</div>
+      <div>12</div>
+    </div>
+       <!--<div class="wrapper">
+            <header class="main-head">¿Quién es ese pokémon?</header>
+            <article class="content"><h1>¡Bienvenid@!</h1><p>Conoce a los pokemones de la región de Kanto.</p><br>
+              <select id="typePokemon">
+                <option value="grass">Hierba</option>
+                <option value="poison">Veneno</option>
+                <option value="fire">Fuego</option>
+                <option value="flying">Volador</option>
+                <br>
+                <button type="button" id="buttonAppi">Visualizar</button>
+                <br>
+              </select></article> 
+            <aside class="side">Sidebar</aside>
+            <footer class="main-footer">(c) 2019 By Rebeca Chiñas & Paola Betancourt</footer>
+        </div> -->
     <footer>
-      <p>(c) 2019 By Rebeca Chiñas & Paola Betancourt</p>
+         <p>(c) 2019 By Rebeca Chiñas & Paola Betancourt</p>
      </footer>
-    </section> 
+    <script src="welcome.js"></script>
   </body>
 </html>
