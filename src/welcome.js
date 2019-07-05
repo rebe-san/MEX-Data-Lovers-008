@@ -1,22 +1,16 @@
-document.getElementById("buttonSearch").addEventListener("click", ()=>{
-  location.href = "appi.html"
-})
-  document.getElementById("name").addEventListener("click", ()=>{
+
+  document.getElementById("searchPokemon").addEventListener("change", ()=>{
+    const name = document.getElementById('searchPokemon').value
     location.href = "appi.html"
   })
 
-  document.getElementById("upward").addEventListener("click", ()=>{
+  document.getElementById("orderPokemon").addEventListener("change", ()=>{
+    const name = document.getElementById('orderPokemon').value
     location.href = "appi.html"
   })
 
-  document.getElementById("falling").addEventListener("click", ()=>{
+  document.getElementById("calculatePokemon").addEventListener("change", ()=>{
+    const name = document.getElementById('calculatePokemon').value
     location.href = "appi.html"
   })
-
-  document.getElementById("optionA").addEventListener("click", ()=>{
-    location.href = "appi.html"
-  })
-
-  document.getElementById("optionB").addEventListener("click", ()=>{
-    location.href = "appi.html"
-  })
+  
