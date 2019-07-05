@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,19 +13,22 @@
   <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Rubik+Mono+One|Russo+One|Sniglet:400,800&display=swap" rel="stylesheet">
   <title>¿Quién es ese pokémon?</title>
 </head>
-
 <body>
-  <header></header>
+    <div class="header">
+        <p>¿Quién es ese pokémon?</p>
+    </div>
   <div class="contenedor">
     <article class="content">
       <h1>¡Bienvenid@!</h1>
       <p>Conoce a los pokemones de la región de Kanto.</p><br>
       <p>Busca:</p>
-        <select id="searchPokemon">
+     
+      <select id="searchPokemon">
         <option value="chooseSearch">Selecciona</option>
         <option value="name">Nombre</option>
         <option value="optionC">Opcion C</option>
       </select>
+      <br>
       <br>
       <p>Ordena:</p>
       <select id="orderPokemon">
@@ -34,6 +36,8 @@
         <option value="upward">Ascendente</option>
         <option value="falling">Descendente</option>
       </select>
+      <br>
+      <br>
       <p>Calcula:</p>
       <select id="calculatePokemon">
         <option value="chooseCalculate">Selecciona</option>
