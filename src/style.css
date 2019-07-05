@@ -10,13 +10,37 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   background-color: #049DBF;
   height: 100vh;
-  padding:25px;
+  padding:0px;
+}
+.contenedor {
+  width: 96%;
+  height: auto;
+  margin: 25px;
+  font-size: 20px;
+  line-height: 25px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+/*
+#26A3BF
+#7ABF9F
+#F2CB05
+#F27507
+#F23535
+*/
+
+.contenedor > div{/*modifica los div dentro del contenedor*/
+  padding: 30px;
+  color: black;
+  background: #26A3BF;
+  box-shadow: 2px 2px 10px rgba(0,0,0,.40);
 }
 
 header {
@@ -49,5 +73,21 @@ footer {
   width: 100%;
   position: fixed;
   bottom: 0;
+}
+
+.contenedor {
+  text-align: center;
+  font-size: 20px; 
+  font-family: 'Russo One', sans-serif;
+  background-color:none;
+  width: 100%;
+  position: fixed;
+  background-image: url('./img/fondo-comic-b.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  padding:0px;
 }
 
