@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <!--Meta para poder hacer al sitio responsive-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon</title>
-    <link rel="stylesheet" href="appi.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Tu layout se mostrará correctamente a una escala de 1:1 Ningún zoom será aplicado-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!--vista de compatibilidad permite al usuario o al navegador establecer el modo de compatibilidad-->
+    <link rel="icon" type="image/img" href="./img/pokebola2.png"> <!--rel="shortcut icon" es para crear un favicon-->
+    <link rel="stylesheet" type="text/css" href="appi.css" /> <!-- rel="stylesheet" Indica que se une una hoja de estilo; type="text/css" indica que es un archivo de texto en sintaxis CSS; href="style.css" nombre del archivo a enlazar.--> 
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Rubik+Mono+One|Russo+One|Sniglet:400,800&display=swap" rel="stylesheet">
+    <title>¿Quién es ese pokémon?</title>
   </head>
   <body>
-    <div id="results-page" class="container">
-  
+    <br>
+    <br>
+    <br>
+    <div class="header">
+      <p>¿Quién es ese pokémon?</p>
     </div>
-   
+    <div id="results-page" class="container col-4 col-s-6">
+    </div>
     <!-- <script src="./data/injuries/injuries.js"></script> -->
     <script src="./data/pokemon/pokemon.js"></script>
     <!-- <script src="./data/steam/steam.js"></script> -->
     <!-- <script src="./data/worldbank/worldbank.js"></script> -->
     <!-- <script src="./data/lol/lol.js"></script> -->
-
+    <footer>
+        <p>(c) 2019 By Rebeca Chiñas & Paola Betancourt</p>
+    </footer>
     <script src="appi.js"></script>
   </body>
 </html>

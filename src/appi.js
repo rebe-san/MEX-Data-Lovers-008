@@ -1,6 +1,7 @@
 POKEMON.pokemon.forEach(showData = (objPokemon) => {
         //Crea un div por cada  pokemon
-        let elementDiv= document.createElement("div");//Crea un nodo div
+        let elementDiv= document.createElement("div");
+        //Crea un nodo div
         document.getElementById("results-page").appendChild(elementDiv)//Adjunta el elemento(div) al div con id result-page
         elementImage.setAttribute("class",objPokemon.img);
         //Muestra la imagen en el div (elementDiv)
