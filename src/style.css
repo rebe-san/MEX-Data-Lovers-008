@@ -43,6 +43,19 @@
   margin: 10px;
 }  */
 
+.header {
+    background-color: #F23535;
+    color: yellow;
+    font-family: 'Russo One', sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    padding: 20px 0px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
 footer {
   min-height: 20px;
   text-align: center;
@@ -83,7 +96,21 @@ footer {
   font-family: 'Russo One', sans-serif;
   font-size:15px;
   color:white;
+} 
+
+.contenedor {
+  width: 100%;
+  position: fixed;
+  background-image: url('./img/fondo-pokemon.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+  padding:0px;
+  top: 80px;
 }
+
 .header {
   /* background-color:/*  #F23535   #ef5350; */
   color: yellow;
@@ -97,6 +124,7 @@ footer {
   justify-content: center; */  
   border: solid 2px pink;
 }
+
 header {
   background-color:/*  #F23535 */  #ef5350;
   /* color: yellow; */
@@ -109,6 +137,7 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
 header .about-us{
   display: flex;
   justify-content: flex-end;
