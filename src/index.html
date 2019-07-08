@@ -2,23 +2,57 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Tu layout se mostrará correctamente a una escala de 1:1 Ningún zoom será aplicado-->
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!--vista de compatibilidad permite al usuario o al navegador establecer el modo de compatibilidad-->
-    <link rel="icon" type="image/img" href="./img/pokebola2.png"> <!--rel="shortcut icon" es para crear un favicon-->
-    <link rel="stylesheet" type="text/css" href="style.css" /> <!-- rel="stylesheet" Indica que se une una hoja de estilo; type="text/css" indica que es un archivo de texto en sintaxis CSS; href="style.css" nombre del archivo a enlazar.--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tu layout se mostrará correctamente a una escala de 1:1 Ningún zoom será aplicado-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--vista de compatibilidad permite al usuario o al navegador establecer el modo de compatibilidad-->
+    <link rel="icon" type="image/img" href="./img/pokebola2.png">
+    <!--rel="icon" es para crear un favicon-->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- rel="stylesheet" Indica que se une una hoja de estilo; type="text/css" indica que es un archivo de texto en sintaxis CSS; href="style.css" nombre del archivo a enlazar.-->
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Rubik+Mono+One|Russo+One|Sniglet:400,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Rubik+Mono+One&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
     <title>¿Quién es ese pokémon?</title>
   </head>
   <body>
-    <section id="indexpage">
-          <br>
-          <br>
-          <div id="buttonGo" type="button"></div>
-          <br>
-    </section> 
-    <footer><!--El footer va afuera de la seccion por html semantico-->
-      <p>(c) 2019 By Rebeca Chiñas & Paola Betancourt</p>
-    </footer>
-  <script src="index.js"></script><!--Va hasta el final para encontrar poder encontrar errores en el js-->
-  </body>
+    <!--Contiene la imagen con efecto Loader-->
+   <!--  <div class="loader">
+      <img id="load-img" src="./img/fondo-letras-gd.jpg" alt="Loading..." />
+    </div> -->
+    <header> <div class="logo-and-title-header"><div id="logo-header"><img src="img/icons8-estrella-pokemon-48.png" alt="Inicio"></div><div class="header">¿Quien es ese Pokemon?</div></div>
+      <div class="about-us">Nosotros</div></header> 
+      <nav class="navegacion">
+        <div>Aqui encontraras los datos de los Pokémon de la Region de Kanto</div>
+        <div>Buscar<input id="input-name" type="text" placeholder="Ejemplo:Pikachu"><div id="icono-search"><img src="img/icons8-búsqueda-48.png" alt="Buscar"></div></div>
+        <ul class="menu">
+          <li><a href="#">Tipo</a>
+            <ul class="submenu">
+              <li><a href="#">Agua</a></li>
+              <li><a href="#">Fuego</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Debilidades</a>
+            <ul class="submenu">
+              <li><a href="#">Agua</a></li>
+              <li><a href="#">Fuego</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Ordenar</a>
+            <ul class="submenu">
+              <li><a  href="#" id="order-az">A-Z</a></li>
+						  <li><a href="#" id="order-za">Z-A</a></li>
+					  </ul>
+          </li>
+        </ul>
+      </nav>
+      <!--Contenedor Principal-->
+      <div id="results-container" class="container-results"></div> 
+      <footer>
+        <p>(c) 2019 By Rebeca Chiñas & Paola Betancourt</p>
+      </footer> 
+      <script src="./data/pokemon/pokemon.js"></script>
+      <script src="data.js"></script> 
+      <script src="main.js"></script>
+    </body>
 </html>
