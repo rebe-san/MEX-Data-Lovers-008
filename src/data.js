@@ -1,12 +1,19 @@
-let arrayPokemon=POKEMON.pokemon;
-
-//Funcion de filtrado
-const filterName=(string)=>{  
-    console.log ("string pasado "+ string)
-    let filterName = arrayPokemon.filter((objPokemon)=> {return objPokemon.name === string;});
-    //console.log(filterArrayName);
-    return filterName;
+//Declaracion de Variables
+let arrayPokemon=POKEMON.pokemon;//Arreglo de objetos pokemon
+//Funcion de filtrado po nombre
+const filterName=(string)=>{
+  let filterName = arrayPokemon.filter((objPokemon)=> {return objPokemon.name === string;});
+  return filterName;
 }
+//Filtrado por tipo
+const filterType=(string)=>{
+  let filterType = arrayPokemon.filter(
+    showType=(objPokemon)=> {
+        
+    return objPokemon.type === "Grass";});
+  return filterType;
+}
+
 //Funcion de ordenamiento por nombre de forma ascendente
 const orderedAscArray =()=>{
 let orderedAscArray=arrayPokemon.sort(function (a, b) {
@@ -16,14 +23,9 @@ let orderedAscArray=arrayPokemon.sort(function (a, b) {
   if (a.name < b.name) {
     return -1;
   }
-  // a must be equal to b
   return 0;
 });
-return orderedAscArray;
-/*console.log("orderedAscArray");
-console.log(orderedAscArray);
-console.log("arraypokemon");
-console.log(arrayPokemon);*/
+return orderedAscArray; 
 }
 //Funcion de ordenamiento por nombre de forma ascendente
 const orderedDescArray =()=>{
@@ -34,33 +36,12 @@ let orderedDescArray=arrayPokemon.sort(function (a, b) {
   if (a.name < b.name) {
     return 1;
   }
-  // a must be equal to b
-  return 0;
-
+ return 0;
 });
-return orderedDescArray;
-/*console.log("orderedDescArray");
-console.log(orderedDescArray);
-console.log("arraypokemon");
-console.log(arrayPokemon);*/
-
+return orderedDescArray; 
 }
-
-
+//Declaracion de variables globales
+window.arrayPokemon=arrayPokemon;
 window.filterName=filterName;
 window.orderedAscArray=orderedAscArray;
 window.orderedDescArray=orderedDescArray;
-window.arrayPokemon = arrayPokemon;
-//Funcion de ordenar por ID
-/*const orderedArrayForId =()=>{
-arrayPokemon.sort(function (a, b) {//Ordena de forma ascendente
-  if (a.id > b.id) {
-    return 1;
-  }
-  if (a.id < b.id) {
-    return -1;
-  }
-  // a must be equal to b
-  return 0;
-});
-}*/
