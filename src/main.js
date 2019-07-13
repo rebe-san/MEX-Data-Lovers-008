@@ -3,7 +3,7 @@ const orderAsc=document.getElementById("order-az"); //Elemento A-Z del menu desp
 const orderDesc=document.getElementById("order-za"); //Elemento Z-A del menu desplegable
 const divResults=document.getElementById("results-container");//Contenedor donde se muestra toda la data
 const iconoSearch=document.getElementById("icono-search");//Icono de busqueda
-const typesList= document.getElementById("types-list")//Menu de tipos
+/* const typesList= document.getElementById("types-list"); *///Menu de tipos
 //Funcion que crea los nodos en el div results-container
 const createNodes = (objPokemon) => {
     //Crea un div por cada  pokemon
@@ -29,41 +29,42 @@ const createNodes = (objPokemon) => {
     let contentWeak=document.createTextNode("Debilidades: "+objPokemon.weaknesses);//Crea un nodo de texto 
     elementWeak.appendChild(contentWeak);// Adjunta el hijo(contentWeak) al padre(elementWeak)
     elementDiv.appendChild(elementWeak);//Adjunta el hijo(elementName) al padre(elemntDiv)
-}
+};
 //Funcion que borra los nodos en el div results-container
 const  deleteNodes= () => {
     while (divResults.hasChildNodes()) {  
         divResults.removeChild(divResults.firstChild);
     } 
-}    
+};    
 //Funcion que muestra toda la data.
 const showData = () => { 
-    arrayPokemon.forEach((objPokemon) => {createNodes(objPokemon);})
-}
+    arrayPokemon.forEach((objPokemon) => {createNodes(objPokemon);});
+};
 //Funcion que muestra la data ordenada de forma ascendente por nombre
-const orderArrayAsc = () => {
+const ArrayAsc = () => {
     deleteNodes();
-    orderedAscArray().forEach(orderData = (objPokemon) => {createNodes(objPokemon);});
-}
+    let array=orderedAscArray();
+    array.forEach(orderData = (objPokemon) => {createNodes(objPokemon);});
+};
 //Funcion que muestra la data ordenada de forma descendente por nombre
-const orderArrayDesc = () => {
+const ArrayDesc = () => {
     deleteNodes();
     orderedDescArray().forEach((objPokemon) => {createNodes(objPokemon);});
-}
+};
 //Funcion que filtra la data por nombre.
 const filterDataByName = () => {
     deleteNodes(); 
     let inputName= document.getElementById("input-name").value;
     let inputNameConverted = inputName[0].toUpperCase() +inputName.slice(1).toLowerCase();
     filterName(inputNameConverted).forEach((objPokemon) => { createNodes(objPokemon);});
-}  
+};  
 //Funcion que muestra la data ordenada de forma ascendente por nombre
 /* const filterDataByType = (type) => {
 } */
 
 //Declaracion de eventos
-orderAsc.addEventListener('click',orderArrayAsc);
-orderDesc.addEventListener('click',orderArrayDesc);
+orderAsc.addEventListener('click',ArrayAsc);
+orderDesc.addEventListener('click',ArrayDesc);
 iconoSearch.addEventListener('click',filterDataByName);
 /* typesList.addEventListener('click', (e) => {(filterDataByType(e.target.dataset.type)
     {console.log(e.target.dataset.type) */
