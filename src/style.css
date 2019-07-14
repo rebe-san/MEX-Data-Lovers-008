@@ -40,7 +40,6 @@ footer {
   font-family: 'Russo One', sans-serif;
   background-color:none;
   width: 100%;
-  position: fixed;
   bottom: 0;
 } 
 /*Estilo del cnotenedor principal*/
@@ -153,7 +152,6 @@ color: /* #353535 */ white;
   transition: opacity 1.5s;
   position: absolute;
   display: grid ;
-  grid-template-columns: 1fr;
 }
 
 
