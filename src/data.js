@@ -4,9 +4,9 @@ const arrayPokemon=POKEMON.pokemon;//Arreglo de objetos pokemon
 const filterName=(string)=>{ // Guarda en filterByName el objeto que cumple con  la condicion.
   let filterByName=arrayPokemon.filter((objPokemon)=> {return objPokemon.name === string;});
   return filterByName;
-}
+};
 //Filtrado por tipo
-const filterType=(type)=>{// Falta pasar el tipo para quee ejecute la funcion.
+const filterType=()=>{// Falta pasar el tipo para quee ejecute la funcion.
   let filterType = arrayPokemon.filter(
     filterByType=(objPokemon,type)=> {
       for(let i=0; i< objPokemon.type.length; i++){
@@ -60,4 +60,3 @@ window.orderedAscArray=orderedAscArray;
 window.orderedDescArray=orderedDescArray;
 window.filterType=filterType;
 window.computeStats=computeStats;
-

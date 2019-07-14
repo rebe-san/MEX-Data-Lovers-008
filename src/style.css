@@ -70,7 +70,6 @@ footer {
   font-family: 'Russo One', sans-serif;
   background-color:none;
   width: 100%;
-  position: fixed;
   bottom: 0;
 }  
 .container-results{
@@ -170,7 +169,7 @@ header {
   transition: opacity 1.5s;
   position: absolute;
   display: grid ;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
 }
 
