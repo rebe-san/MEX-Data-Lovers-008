@@ -181,6 +181,8 @@ color: /* #353535 */ white;
   
 }
 
+/*Media queries*/
+
 @media screen and (min-width: 1201px){
   .container-results{
     display: grid ;
@@ -199,47 +201,12 @@ color: /* #353535 */ white;
     justify-content: center;  
    }
 }
-
-/*Media queries*/
 @media screen and (max-width: 1200px){
   .container-results{
     display: grid ;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
   }
-
- /*  .about-us{
-    font-family: 'Russo One', sans-serif;
-    font-size:15px;
-    color:white;
-  } 
-  
-  .header {
-    background-color:#ef5350;
-    color: yellow;
-    font-family: 'Russo One', sans-serif;
-    font-weight: bold;
-    font-size: 30px;
-    padding: 20px 0px;
-
-  display: flex;
-    justify-content: center; 
-   border: none;
-  }
- */
-
- /*  #input-name{
-    margin-left: 6px;
-  }
-  .navegation div{
-    color:white;
-    font-family: 'Lato', sans-serif;
-    display: flex;
-    align-items: center;
-  }
-  .navegation ul{
-    list-style: none;
-  }  */
 }
 @media screen and (max-width: 992px){
   .container-results{
@@ -249,40 +216,13 @@ color: /* #353535 */ white;
   } 
   
   .about-us{
-    /* font-family: 'Russo One', sans-serif; */
     font-size:13px;
-    /* color:white; */
   } 
   
   .title-header {
-    /* color: yellow;
-    font-family: 'Russo One', sans-serif;
-    font-weight: bold; */
     font-size: 25px;
     padding: 15px 0px;
-    /* border: none; */
   }
-
- /*  #icono-search{
-    width: 22px;
-    height: 22px;
-  } */
-/* 
-  #input-name{
-    margin-left: 5px;
-  } */
-  /* .navegation div{
-    color:white;
-    font-family: 'Lato', sans-serif;
-    display: flex;
-    align-items: center;
-  }
-
-  .navegation{
-    display:block;
-    width: 100%;
-    align-content: center;
-  } */
 }
 @media screen and (max-width: 767.98px){
   .container-results{
@@ -292,38 +232,13 @@ color: /* #353535 */ white;
   }
  
   .about-us{
-    /* font-family: 'Russo One', sans-serif; */
     font-size:13px;
-  /*   color:white; */
   } 
   
   .title-header {
-   /*  color: yellow;
-    font-family: 'Russo One', sans-serif;
-    font-weight: bold; */
     font-size: 23px;
     padding: 13px 0px;
-    /* border: none; */
   }
-
-  /* #icono-search{
-    width: 10px;
-    height: 10px;
-  } */
-  /* #input-name{
-    margin-left: 5px;
-  } */
-/*   .navegation div{
-    color:white;
-    font-family: 'Lato', sans-serif;
-    display: flex;
-    align-items: center;
-  }
-  .navegation{
-    display:block;
-    width: 100%;
-    align-content: center;
-  } */
 }
 
 @media screen and (max-width: 576px){
@@ -335,17 +250,11 @@ color: /* #353535 */ white;
   }
  
  .about-us{
-   /*  font-family: 'Russo One', sans-serif; */
     font-size:13px;
-   /*  color:white; */
   } 
   
  .title-header {
-   /*  color: yellow;
-    font-family: 'Russo One', sans-serif;
-    font-weight: bold; */
     font-size: 23px;
     padding: 13px 0px;
-  /*   border: none; */
   } 
 }

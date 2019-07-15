@@ -6,19 +6,6 @@ filterName:(string,array)=>{ // Guarda en filterByName el objeto que cumple con 
   let filterByName=array.filter((objPokemon)=> {return objPokemon.name === string;});
   return filterByName;
 },
-//Filtrado por tipo
-const filterType=()=>{// Falta pasar el tipo para quee ejecute la funcion.
-  let filterType = arrayPokemon.filter(
-    filterByType=(objPokemon,type)=> {
-/* const filterType=(type)=>{// Falta pasar el tipo para quee ejecute la funcion.
-  let filterType = arrayPokemon.filter(filterByType=(objPokemon,type)=> {
-      for(let i=0; i< objPokemon.type.length; i++){
-        console.log(objPokemon.type);
-        return objPokemon.type[i] === type;
-      }  
-  });
-  return filterType;
-} */
 //Funcion de ordenamiento por nombre de forma ascendente
 orderedAscArray:(array)=>{
 let orderedArrayAsc=array.sort(function (a, b) {
@@ -56,6 +43,3 @@ return orderedArrayDesc;
     console.log("Promedio "+averageHeight/arrayPokemon.length);
 }, */
 };
-//Declaracion de variables globales
-/* window.filterType=filterType;*/ 
-//Calcula el promedio de altura de los pokemones
