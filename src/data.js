@@ -7,6 +7,9 @@ filterName:(string,array)=>{ // Guarda en filterByName el objeto que cumple con 
   return filterByName;
 },
 //Filtrado por tipo
+const filterType=()=>{// Falta pasar el tipo para quee ejecute la funcion.
+  let filterType = arrayPokemon.filter(
+    filterByType=(objPokemon,type)=> {
 /* const filterType=(type)=>{// Falta pasar el tipo para quee ejecute la funcion.
   let filterType = arrayPokemon.filter(filterByType=(objPokemon,type)=> {
       for(let i=0; i< objPokemon.type.length; i++){
@@ -55,5 +58,4 @@ return orderedArrayDesc;
 };
 //Declaracion de variables globales
 /* window.filterType=filterType;*/ 
-
 //Calcula el promedio de altura de los pokemones
