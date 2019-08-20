@@ -70,6 +70,7 @@ footer {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  border: solid 2px blue;
 }
 
 /*Estilo de la descripcion , busqueda y menu principal*/
@@ -98,6 +99,9 @@ footer {
   width: 26px;
   height: 26px;
 }
+.menu{
+  border: solid 2px red;
+}
 /*Estilo de los texto de tipos y debilidades*/
 .menu > li{/* 
   position: relative;  */
@@ -121,10 +125,12 @@ color: /* #353535 */ white;
 	visibility: visible;
 	/* opacity: 1; */
 }
+
 .menu li:hover .submenu-weakness{
 	visibility: visible;
-	opacity: 1;
+	/* opacity: 1; */
 }
+
 .menu li:hover .submenu-order{
 	visibility: visible;
 	opacity: 1;
@@ -136,13 +142,16 @@ color: /* #353535 */ white;
   position: absolute;
   display: grid ;
   grid-template-columns: 1fr 1fr 1fr ;
+  border: solid 2px green; 
+  
 }
 .submenu-weakness{
 	background: #333333;
 	visibility: hidden;
   position: absolute;
   display: grid ;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: solid 2px yellow;
 }
 .submenu-order{
 	background: #333333;
@@ -152,6 +161,7 @@ color: /* #353535 */ white;
   transition: opacity 1.5s;
   position: absolute;
   display: grid ;
+  border: solid 2px purple;
 }
 
 

@@ -4,8 +4,11 @@ const orderDesc=document.getElementById("order-za"); //Elemento Z-A del menu des
 const divResults=document.getElementById("results-container");//Contenedor donde se muestra toda la data
 const iconoSearch=document.getElementById("icono-search");//Icono de busqueda
 const logoHeader=document.getElementById("logo-header");
+const averageH=document.getElementById("average-height");
+const typeChart=document.getElementById("type-chart");
 const arrayPokemon=POKEMON.pokemon;
-/* const typesList= document.getElementById("types-list"); *///Menu de tipos
+const typesList= document.getElementById("types-list"); //Menu de tipos
+const weaknessList= document.getElementById("weakness-list"); //Menu de tipos
 //Funcion que crea los nodos en el div results-container
 const createNodes = (array) => {
     array.forEach((objPokemon) => {
@@ -71,15 +74,80 @@ const filterDataByName = () => {
     createNodes(array);
 };  
 //Funcion que muestra la data ordenada de forma ascendente por nombre
-/* const filterDataByType = (type) => {
-} */
+const filterDataByType = (type) => {
+    console.log(type);
+    deleteNodes(); 
+    let array= window.functions.filterType(arrayPokemon,type);
+    createNodes(array);
+}; 
 
+//Funcion que muestra la data ordenada de forma ascendente por nombre
+const filterDataByWeakness = (type) => {
+    console.log(type);
+    deleteNodes(); 
+    let array= window.functions.filterWeak(arrayPokemon,type);
+    createNodes(array);
+};  
+
+//Funcion que muestra la altura promedio
+const average = () => {
+    deleteNodes(); 
+    let elementDiv= document.createElement("div");//Crea un nodo div
+    elementDiv.setAttribute("class","obj-pokemon"); //Agrega una clase(objPokemon) al elemento (elementDIv)
+    let avrHeigth=window.functions.computeStats(arrayPokemon);
+    let element=document.createElement("p");//Crea un nodo div
+    let content=document.createTextNode("Altura Promedio "+avrHeigth);//Crea un nodo de texto 
+    element.appendChild(content);// Adjunta el hijo(contentType) al padre(elementType)
+    elementDiv.appendChild(element);
+    divResults.appendChild(elementDiv);
+};
+
+const showChart = () =>{
+        deleteNodes(); 
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+   
+    function drawChart() {
+      // Crea la tabla de datos
+      var data = google.visualization.arrayToDataTable([
+        ['Tipo', 'Porcentaje'],
+        ['Agua', 32],
+        ['Fuego', 12],
+        ['Planta', 14],
+        ['Tierra', 14],
+        ['Hielo', 5],
+        ['Eléctrico', 9],
+        ['Roca', 11],
+        ['Volador', 19],
+        ['Venenoso', 33],
+        ['Insecto', 12],
+        ['Psíquico', 14],
+        ['Normal', 24],
+        ['Volador', 8],
+        ['Dragón', 3]
+        ]);
+
+      // Establece las opciones de la grafica
+      var options = {
+                     'title':'Tipos de Pokemon'
+                    };
+      // Inicializa y dibuja la grafica
+      var chart = google.visualization.PieChart(document.getElementById('pie-chart'));
+      chart.draw(data, options);
+    }
+}
 //Declaracion de eventos
 orderAsc.addEventListener('click',ArrayAsc);
 orderDesc.addEventListener('click',ArrayDesc);
 iconoSearch.addEventListener('click',filterDataByName);
 logoHeader.addEventListener('click',showData);
-/* typesList.addEventListener('click', (e) => {(filterDataByType(e.target.dataset.type)
-    {console.log(e.target.dataset.type) */
+averageH.addEventListener('click',average);
+typeChart.addEventListener('click',showChart);
+typesList.addEventListener('click', (e) => { 
+    filterDataByType(e.target.dataset.type);
+});
+weaknessList.addEventListener('click', (e) => { 
+    filterDataByWeakness(e.target.dataset.weakness);
+});
 showData();
-/* computeStats(); */
+/*computeStats();*/
