@@ -12,7 +12,16 @@
   "dependencies": {
     "eslint": "^5.9.0",
     "eslint-plugin-jest": "^22.1.2",
-    "htmlhint": "^0.10.1",
-    "jest": "^23.6.0"
+    "htmlhint": "^0.10.1"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "jest-fetch-mock": "^2.1.2"
+  },
+  "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./setupJest.js"
+    ]
   }
 }

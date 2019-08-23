@@ -2,5 +2,13 @@
   "env": {
     "node": true,
     "jest": true
-  }
+  },
+  "parserOptions": {
+    "ecmaVersion": 2019
+  },
+  "globals": {
+    "POKEMON": false, 
+    "functions": false,
+    "google":false
+  },
 }

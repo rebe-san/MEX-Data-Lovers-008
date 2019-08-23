@@ -14,15 +14,13 @@
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Rubik+Mono+One&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <title>¿Quién es ese pokémon?</title>
 
   </head>
   <body>
     <!-- <div class="loading"></div> -->
     <div class="header-and-menu-container">
-    <header><div class="logo-and-title-header"><div id="logo-header"><img src="img/pokebola46x40.png" alt="Inicio"></div><div class="title-header">¿Quien es ese Pokemon?</div></div>
-      <div id="us" class="about-us"  data-toggle="modal" data-target="#modal">Nosotros</div>
+    <header><div class="logo-and-title-header" data-toggle="modal" data-target="#exampleModal"><div id="logo-header"><img src="img/pokebola46x40.png" alt="Inicio"></div><div class="title-header">¿Quien es ese Pokemon?</div></div>
     </header> 
       <nav class="navigation">
         <div>Aqui encontraras los datos de los Pokémon de la Region de Kanto</div>
@@ -69,47 +67,50 @@
           </li> 
           <li><a href="#">Ordenar</a>
             <ul class="submenu-order" id="order">
-              <li><a  href="#" id="order-az">A-Z</a></li>
-						  <li><a href="#" id="order-za">Z-A</a></li>
+              <li><a  href="#" data-orde="az" id="order-az">A-Z</a></li>
+						  <li><a href="#" data-order="za" id="order-za">Z-A</a></li>
 					  </ul>
           </li>
           <li><a href="#Alturapromedio" id="average-height">Altura Promedio</a></li>
-          <li><a href="#TypesPokemon" id="type-chart">Grafica de Tipos de Pokemon</a></li>
+          <li><a href="#TypesPokemon" id="type-chart">Grafica</a></li>
         </ul>
       </div>   
       </nav>
     </div>
       <!--Contenedor Principal-->
       <div id="results-container" class="container-results"></div>
-      <div id="pie-chart"  style="width: 500px; height: 500px;">Grafica</div>
+       <!--Contenedor de grafica-->  
+            <div id="pie-chart" style="width: 900px; height:500px ;"></div>
+     
       <!-- Modal -->
-      <!-- <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-         <div class="modal-dialog" role="document">
-           <div class="modal-content">
-             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">¿Quien es ese pokemon?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-           <div class="modal-body">
-            <p>En esta app encontraras la informacion basica de los pokemon</p>
-         </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Adivina que Pokemon es:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <figure><img src="" alt=""></figure> -->
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
-</div>  -->
+</div>
       
       <footer>
         <p>(c) 2019 By Rebeca Chiñas & Paola Betancourt</p>
       </footer>
+      
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-      <script src="./data/pokemon/pokemon.js"></script>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
       <script src="data.js"></script> 
       <script src="main.js"></script>
     </body>
