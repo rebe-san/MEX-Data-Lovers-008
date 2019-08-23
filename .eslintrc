@@ -3,12 +3,13 @@
     "browser": true
   },
   "parserOptions": {
-    "ecmaVersion": 6
+    "ecmaVersion": 2019
   },
   "extends": "eslint:recommended",
   "globals": {
     "POKEMON": false, 
-    "functions": false
+    "functions": false,
+    "google":false
   },
   "rules": {
     "no-console": 0,

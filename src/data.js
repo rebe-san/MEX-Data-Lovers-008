@@ -2,6 +2,12 @@
 
 //Funcion de filtrado po nombre
 window.functions={
+
+getData : async (url) => {
+    const respuesta = await fetch(url); //Hace la Peticion
+    return await respuesta.json();//Regresa la respuesta de la Peticion
+},
+
 filterName:(string,array)=>{ // Guarda en filterByName el objeto que cumple con  la condicion.
   let filterByName=array.filter((objPokemon)=> {return objPokemon.name === string;});
   return filterByName;
@@ -66,4 +72,7 @@ computeStats : (array)=>{
   let avgHeight= averageHeight/array.length; 
   return avgHeight;
 }, 
+
+
+
 };

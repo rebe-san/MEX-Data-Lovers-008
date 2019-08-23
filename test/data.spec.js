@@ -1,4 +1,5 @@
-require('../src/data.js'); 
+ require('../src/main.js'); 
+ require('../src/data.js');
 /* require('../src/data/pokemon/pokemon.js');  */
 const array= [{
     "name": "Bulbasaur"
@@ -40,6 +41,21 @@ const arrayOrderZa= [{
   "name": "Bulbasaur"
 }
 ];
+
+test('La data es pokemon', async () => {
+  const data = await window.functions.getData("./data/pokemon/pokemon.json");
+  console.log(data);
+  
+  expect(typeof data).toBe("object");//Tengo que jalar toda la data para compararlas?? o que tengo que poner
+});
+
+// test('the data is peanut butter', () => {
+//   return fetchData().then(data => {
+//     expect(data).toBe('peanut butter');
+//   });
+// });
+
+//Tests para funciones (no sincronas)
 describe('dataFunctions', () => {
   it('functions es un objeto', () => {//Test para comprobar que dataFunctions es un objeto 
     expect(typeof(functions)).toBe('object');
