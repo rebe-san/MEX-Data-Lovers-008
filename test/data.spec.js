@@ -1,4 +1,4 @@
- require('../src/main.js'); 
+ require('../src/main.js');
  require('../src/data.js');
 /* require('../src/data/pokemon/pokemon.js');  */
 const array= [{
@@ -21,7 +21,7 @@ const arrayOrderAz= [{
 }, {
   "name": "Charmeleon"
 }, {
-  "name": "Ivysaur"  
+  "name": "Ivysaur"
 }, {
   "name": "Venusaur"
 }
@@ -29,59 +29,53 @@ const arrayOrderAz= [{
 
 const arrayOrderZa= [{
   "name": "Venusaur"
-  
+
 }, {
-  "name": "Ivysaur" 
-  
+  "name": "Ivysaur"
+
 }, {
   "name": "Charmeleon"
 }, {
-  "name": "Charmander" 
+  "name": "Charmander"
 }, {
   "name": "Bulbasaur"
 }
 ];
 
-test('La data es pokemon', async () => {
-  const data = await window.functions.getData("./data/pokemon/pokemon.json");
-  console.log(data);
-  
-  expect(typeof data).toBe("object");//Tengo que jalar toda la data para compararlas?? o que tengo que poner
-});
-
-// test('the data is peanut butter', () => {
-//   return fetchData().then(data => {
-//     expect(data).toBe('peanut butter');
-//   });
+// test('La data es pokemon', async () => {
+//   const data = await window.functions.getData(array);
+//   console.log(typeof data);
+//   expect(typeof data).toBe("object");//Tengo que jalar toda la data para compararlas?? o que tengo que poner
 // });
+
 
 //Tests para funciones (no sincronas)
 describe('dataFunctions', () => {
-  it('functions es un objeto', () => {//Test para comprobar que dataFunctions es un objeto 
+  it('functions es un objeto', () => {//Test para comprobar que dataFunctions es un objeto
     expect(typeof(functions)).toBe('object');
-  }); 
+  });
 
-  it('filterName es un funcion', () => { //Test para comprobar que filtername es una funcion 
+  it('filterName es un funcion', () => { //Test para comprobar que filtername es una funcion
     expect(typeof(functions.filterName)).toBe('function');
   });
 
-  it('filterName es correcta', () => { //Test para comprobar que filtername es una funcion 
+  it('filterName es correcta', () => { //Test para comprobar que filtername es una funcion
     expect(functions.filterName('Charmeleon',array)).toEqual([array[4]]);
   });
 
-  it('orderedAscArray es una funcion', () => { //Test para comprobar que filtername es una funcion 
+  it('orderedAscArray es una funcion', () => { //Test para comprobar que filtername es una funcion
     expect(typeof(functions.orderedAscArray)).toBe('function');
   });
-  
-  it('orderedAscArray es correcta', () => { //Test para comprobar que filtername es una funcion 
+
+  it('orderedAscArray es correcta', () => { //Test para comprobar que filtername es una funcion
     expect(functions.orderedAscArray(array)).toEqual(arrayOrderAz);
   });
 
-  it('orderedDescArray es una funcion', () => { //Test para comprobar que filtername es una funcion 
+  it('orderedDescArray es una funcion', () => { //Test para comprobar que filtername es una funcion
     expect(typeof(functions.orderedDescArray)).toBe('function');
   });
-  
-  it('orderedADescArray es correcta', () => { //Test para comprobar que filtername es una funcion 
+
+  it('orderedADescArray es correcta', () => { //Test para comprobar que filtername es una funcion
     expect(functions.orderedDescArray(array)).toEqual(arrayOrderZa);
   });
 });

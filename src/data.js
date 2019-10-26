@@ -1,11 +1,13 @@
 //Declaracion de Variables
-
-//Funcion de filtrado po nombre
 window.functions={
-
 getData : async (url) => {
+  try {
     const respuesta = await fetch(url); //Hace la Peticion
-    return await respuesta.json();//Regresa la respuesta de la Peticion
+    const parsed = await respuesta.json();//respuesta en formato json
+    return parsed;//Regresa la respuesta de la Peticion
+  } catch (error) {
+    console.error(error);
+  }
 },
 
 filterName:(string,array)=>{ // Guarda en filterByName el objeto que cumple con  la condicion.
@@ -14,16 +16,17 @@ filterName:(string,array)=>{ // Guarda en filterByName el objeto que cumple con 
 },
 //Filtrado por tipo
 filterType:(array,type)=>{// Falta pasar el tipo para quee ejecute la funcion.
+
   let filterType=array.filter((objPokemon)=> {
       for(let i=0; i< objPokemon.type.length; i++){
         if (objPokemon.type[i] === type) {
           return objPokemon.type[i]===type;
        }
-      }        
+      }
   });
-  console.log(filterType);
+  // console.log(filterType);
   return filterType;
-},  
+},
 
 //Filtrado por debilidad
 filterWeak:(array,type)=>{// Falta pasar el tipo para quee ejecute la funcion.
@@ -32,11 +35,10 @@ filterWeak:(array,type)=>{// Falta pasar el tipo para quee ejecute la funcion.
         if (objPokemon.weaknesses[i] === type) {
           return objPokemon.weaknesses[i]===type;
        }
-      }        
+      }
   });
-  console.log(filterType);
   return filterType;
-}, 
+},
 
 //Funcion de ordenamiento por nombre de forma ascendente
 orderedAscArray:(array)=>{
@@ -49,7 +51,7 @@ let orderedArrayAsc=array.sort(function (a, b) {
   }
   return 0;
 });
-return orderedArrayAsc; 
+return orderedArrayAsc;
 },
 //Funcion de ordenamiento por nombre de forma ascendente
 orderedDescArray:(array)=>{
@@ -64,15 +66,16 @@ let orderedArrayDesc=array.sort(function (a, b) {
 });
 return orderedArrayDesc;
 },
+
 computeStats : (array)=>{
   let averageHeight= 0;
-  array.forEach((objPokemon) => { 
+  array.forEach((objPokemon) => {
     averageHeight=parseFloat(objPokemon.height.slice(0,4))+averageHeight ;
   });
-  let avgHeight= averageHeight/array.length; 
+  let avgHeight= averageHeight/array.length;
   return avgHeight;
-}, 
-
-
+},
 
 };
+
+
