@@ -1,4 +1,4 @@
-# ¿Quién conoce ese pokémon?
+# ¿Quién es ese pokémon?
 
 En la atualidad, la tendencia del mercado apunta a la nostalgía. Pensando en ello y tomando en cuenta que ambas colaboradoras del proyecto tenemos noción acerca de la serie Pokémon, decidimos realizar el proyecto sobre dicha data.
 
