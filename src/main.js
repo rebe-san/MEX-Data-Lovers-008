@@ -1,153 +1,151 @@
 //Declaraciion de variables.
-const orderAsc=document.getElementById("order-az"); //Elemento A-Z del menu desplegable
-const orderDesc=document.getElementById("order-za"); //Elemento Z-A del menu desplegable
-const search=document.getElementById("search");//Icono de busqueda
-const averageH=document.getElementById("average-height");
-const typeChart=document.getElementById("type-chart");
-const typesList= document.getElementById("types-list"); //Menu de tipos
-const weaknessList= document.getElementById("weakness-list"); //Menu de debilidades
-const mainContainer=document.getElementById("main-container");
+const orderAsc = document.getElementById("order-az");
+const orderDesc = document.getElementById("order-za");
+const search = document.getElementById("search");
+const averageH = document.getElementById("average-height");
+const typeChart = document.getElementById("type-chart");
+const typesList = document.getElementById("types-list");
+const weaknessList = document.getElementById("weakness-list");
+const mainContainer = document.getElementById("main-container");
 
-const main = async () => {
-    const data = await window.functions.getData("./data/pokemon/pokemon.json");//Guarda la el json generado por la peticion
-    createNodes(data.pokemon);
-    orderAsc.addEventListener('click',() => { ArrayAsc(data.pokemon); });
-    orderDesc.addEventListener('click',()=>{ArrayDesc(data.pokemon);});
-    search.addEventListener('click',()=>{filterDataByName(data.pokemon);});
-    averageH.addEventListener('click',()=>{average(data.pokemon);});
-    typeChart.addEventListener('click',()=>{showChart(data.pokemon);});
-    typesList.addEventListener('click', (e) => { filterDataByType(data.pokemon,e.target.dataset.type);});
-    weaknessList.addEventListener('click', (e) => {
-    filterDataByWeakness(data.pokemon,e.target.dataset.weakness);
-    });
-};
+const createElement = element => document.createElement(element);
+const setAttribute = (element, attribute, nameAttribute) => element.setAttribute(attribute, nameAttribute);
+const appendChild = (parent, child) => parent.appendChild(child);
 
 //Funcion que crea los nodos en el div results-container
-const createNodes = (array) => {
-   //section de pokemons
-   let sectionResults= document.createElement("section");//Crea un nodo div
-   sectionResults.setAttribute("class","container-results");
-    array.forEach((objPokemon) => {
+const createNodes = array => {
+  //section de pokemons
+  let sectionResults = createElement("section");
+  setAttribute(sectionResults, "class", "container-results");
+  array.forEach(objPokemon => {
     //Crea un div por cada  pokemon
-    let elementDiv= document.createElement("div");//Crea un nodo div
-    elementDiv.setAttribute("class","obj-pokemon"); //Agrega una clase(objPokemon) al elemento (elementDIv)
-    sectionResults.appendChild(elementDiv);//Adjunta el hijo(elementDiv) al padre(divResults)
-    //Muestra la imagen en el div (elementDiv)average
-    let elementImage= document.createElement("img");//Crea un nodo img
-    elementImage.setAttribute("src",objPokemon.img);//Agrega el atributo(src) al elemento (elementImage)
-    elementDiv.appendChild(elementImage);//Adjunta el hijo(elementImage) al padre(elementDiv)
-    //Muestra el nombre en el div (elementDiv)
-    let elementName= document.createElement("p");//Crea un nodo p
-    let contentName=document.createTextNode(objPokemon.name);//Crea un nodo de texto
-    elementName.appendChild(contentName);// Adjunta el hijo(contentName) al padre(elementName)
-    elementDiv.appendChild(elementName);//Adjunta el hijo(elementName) al padre(elemntDiv)
-    //Muestra el tipo en el div (elementDiv)
-    let elementType= document.createElement("p");//Crea un nodo p
-    let contentType=document.createTextNode("Tipo: "+ objPokemon.type);//Crea un nodo de texto
-    elementType.appendChild(contentType);// Adjunta el hijo(contentType) al padre(elementType)
-    elementDiv.appendChild(elementType);//Adjunta el hijo(elementType) al padre(elemntDiv)
-    //Muestra las debilidades en el div (elementDiv)
-    let elementWeak= document.createElement("p");//Crea un nodo p
-    let contentWeak=document.createTextNode("Debilidades: "+objPokemon.weaknesses);//Crea un nodo de texto
-    elementWeak.appendChild(contentWeak);// Adjunta el hijo(contentWeak) al padre(elementWeak)
-    elementDiv.appendChild(elementWeak);//Adjunta el hijo(elementName) al padre(elemntDiv)
-});
-mainContainer.appendChild(sectionResults);
+    let elementDiv = createElement("div");
+
+    //Agrega una clase(objPokemon) al elemento (elementDIv)
+    setAttribute(elementDiv, "class", "obj-pokemon");
+
+    //Adjunta el hijo(elementDiv) al padre(sectionResults)
+    appendChild(sectionResults, elementDiv);
+    let elementImage = createElement("img");
+    setAttribute(elementImage, "src", objPokemon.img);
+    appendChild(elementDiv, elementImage);
+    let elementName = createElement("p");
+    let contentName = document.createTextNode(objPokemon.name);
+    appendChild(elementName, contentName);
+    appendChild(elementDiv, elementName);
+    let elementType = createElement("p");
+    let contentType = document.createTextNode("Tipo: " + objPokemon.type);
+    appendChild(elementType, contentType);
+    appendChild(elementDiv, elementType);
+    let elementWeak = createElement("p");
+    let contentWeak = document.createTextNode("Debilidades: " + objPokemon.weaknesses);
+    appendChild(elementWeak, contentWeak);
+    appendChild(elementDiv, elementWeak);
+  });
+  appendChild(mainContainer, sectionResults);
 };
 
 //Funcion que borra los nodos en el div results-container
-const  deleteNodes= () => {
-    while (mainContainer.hasChildNodes()) {
-        mainContainer.removeChild(mainContainer.firstChild);
-    }
+const deleteNodes = () => {
+  while (mainContainer.hasChildNodes())
+    mainContainer.removeChild(mainContainer.firstChild);
 };
 
 //Funcion que muestra la data ordenada de forma ascendente por nombre
-const ArrayAsc = (array) => {
-    deleteNodes();
-    let arrayAsc=window.functions.orderedAscArray(array);
-    createNodes(arrayAsc);
+const ArrayAsc = array => {
+  deleteNodes();
+  createNodes(window.functions.orderedAscArray(array));
 };
 // //Funcion que muestra la data ordenada de forma descendente por nombre
-const ArrayDesc = (array) => {
-    deleteNodes();
-    let arrayDesc=window.functions.orderedDescArray(array);
-    createNodes(arrayDesc);
+const ArrayDesc = array => {
+  deleteNodes();
+  createNodes(window.functions.orderedDescArray(array));
 };
 // //Funcion que filtra la data por nombre.
-const filterDataByName = (array) => {
-    deleteNodes();
-    let inputName= document.getElementById("input-name").value;
-    let inputNameConverted = inputName[0].toUpperCase() +inputName.slice(1).toLowerCase();
-    let arrayName= window.functions.filterName(inputNameConverted,array);
-    createNodes(arrayName);
-
+const filterDataByName = array => {
+  deleteNodes();
+  let inputName = document.getElementById("input-name").value;
+  let inputNameConverted = inputName[0].toUpperCase() + inputName.slice(1).toLowerCase();
+  createNodes(window.functions.filterName(inputNameConverted, array));
 };
 // //Funcion que muestra la data ordenada de forma ascendente por nombre
-const filterDataByType = (array,type) => {
-    console.log(type);
-    deleteNodes();
-    let arrayType= window.functions.filterType(array,type);
-    createNodes(arrayType);
+const filterDataByType = (array, type) => {
+  deleteNodes();
+  createNodes(window.functions.filterType(array, type));
 };
 
 // //Funcion que muestra la data ordenada de forma ascendente por nombre
-const filterDataByWeakness = (array,type) => {
-    console.log(type);
-    deleteNodes();
-    let arrayWeak= window.functions.filterWeak(array,type);
-    createNodes(arrayWeak);
+const filterDataByWeakness = (array, type) => {
+  deleteNodes();
+  createNodes(window.functions.filterWeak(array, type));
 };
 
 // //Funcion que muestra la altura promedio
-const average = (array) => {
-    deleteNodes();
-    let elementDiv= document.createElement("div");//Crea un nodo div
-    elementDiv.setAttribute("class","div-average"); //Agrega una clase(objPokemon) al elemento (elementDIv)
-    let avrHeigth=window.functions.computeStats(array);
-    let element=document.createElement("p");//Crea un nodo div
-    let content=document.createTextNode("Altura Promedio "+avrHeigth);//Crea un nodo de texto
-    element.appendChild(content);// Adjunta el hijo(contentType) al padre(elementType)
-    elementDiv.appendChild(element);
-    mainContainer.appendChild(elementDiv);
+const average = array => {
+  deleteNodes();
+  let sectionAverage = createElement("section");
+  setAttribute(sectionAverage, "class", "section-average");
+  let elementP = createElement("p");
+  let content = document.createTextNode(
+    "Altura Promedio " + window.functions.computeStats(array)
+  );
+  appendChild(elementP, content);
+  appendChild(sectionAverage, elementP);
+  appendChild(mainContainer, sectionAverage);
 };
+
 //Grafica de los tipos de pokemon
-const showChart = () =>{
-    deleteNodes();
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
+const showChart = () => {
+  deleteNodes();
+  google.charts.load("current", { packages: ["corechart"] });
+  google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart() {
-      // Crea la tabla de datos
-      var data = google.visualization.arrayToDataTable([
-        ['Tipo', 'Porcentaje'],
-        ['Agua', 32],
-        ['Fuego', 12],
-        ['Planta', 14],
-        ['Tierra', 14],
-        ['Hielo', 5],
-        ['Eléctrico', 9],
-        ['Roca', 11],
-        ['Volador', 19],
-        ['Venenoso', 33],
-        ['Insecto', 12],
-        ['Psíquico', 14],
-        ['Normal', 24],
-        ['Volador', 8],
-        ['Dragón', 3]
-        ]);
+  function drawChart() {
+    // Crea la tabla de datos
+    var data = google.visualization.arrayToDataTable([
+      ["Tipo", "Porcentaje"],
+      ["Agua", 32],
+      ["Fuego", 12],
+      ["Planta", 14],
+      ["Tierra", 14],
+      ["Hielo", 5],
+      ["Eléctrico", 9],
+      ["Roca", 11],
+      ["Volador", 19],
+      ["Venenoso", 33],
+      ["Insecto", 12],
+      ["Psíquico", 14],
+      ["Normal", 24],
+      ["Volador", 8],
+      ["Dragón", 3]
+    ]);
 
-      // Establece las opciones de la grafica
-      var options = {
-                     'title':'Tipos de Pokemon'
-                    };
-    let elementDiv= document.createElement("div");//Crea un nodo div
-    elementDiv.setAttribute("id","pie-chart"); //Agrega una clase(objPokemon) al elemento (elementDIv)
-    mainContainer.appendChild(elementDiv);
-      // Inicializa y dibuja la grafica
-      var chart =new google.visualization.PieChart(document.getElementById('pie-chart'));
-      chart.draw(data, options);
-    }
+    // Establece las opciones de la grafica
+    var options = {
+      title: "Tipos de Pokemon"
+    };
+    let sectionChart = createElement("section");
+    sectionChart.setAttribute("id", "pie-chart");
+    mainContainer.appendChild(sectionChart);
+
+    // Inicializa y dibuja la grafica
+    var chart = new google.visualization.PieChart(
+      document.getElementById("pie-chart")
+    );
+    chart.draw(data, options);
+  }
+};
+
+const main = async () => {
+  const data = await window.functions.getData("./data/pokemon/pokemon.json"); //Guarda la el json generado por la peticion
+  createNodes(data.pokemon);
+  orderAsc.addEventListener("click", () => ArrayAsc(data.pokemon));
+  orderDesc.addEventListener("click", () => ArrayDesc(data.pokemon));
+  search.addEventListener("click", () => filterDataByName(data.pokemon));
+  averageH.addEventListener("click", () => average(data.pokemon));
+  typeChart.addEventListener("click", () => showChart(data.pokemon));
+  typesList.addEventListener("click", e => filterDataByType(data.pokemon, e.target.dataset.type));
+  weaknessList.addEventListener("click", e => filterDataByWeakness(data.pokemon, e.target.dataset.weakness));
 };
 
 main();
