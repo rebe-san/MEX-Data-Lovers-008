@@ -1,81 +1,73 @@
-//Declaracion de Variables
-window.functions={
-getData : async (url) => {
-  try {
-    const respuesta = await fetch(url); //Hace la Peticion
-    const parsed = await respuesta.json();//respuesta en formato json
-    return parsed;//Regresa la respuesta de la Peticion
-  } catch (error) {
-    console.error(error);
-  }
-},
+//Declaracion de funciones
+window.functions = {
+  getData: async url => {
+    try {
+      //Hace la Peticion
+      const respuesta = await fetch(url);
 
-filterName:(string,array)=>{ // Guarda en filterByName el objeto que cumple con  la condicion.
-  let filterByName=array.filter((objPokemon)=> {return objPokemon.name === string;});
-  return filterByName;
-},
-//Filtrado por tipo
-filterType:(array,type)=>{// Falta pasar el tipo para quee ejecute la funcion.
+      //respuesta en formato json
+      return await respuesta.json();
+    } catch (error) {
+      console.error(error);
+    }
+  },
 
-  let filterType=array.filter((objPokemon)=> {
-      for(let i=0; i< objPokemon.type.length; i++){
-        if (objPokemon.type[i] === type) {
-          return objPokemon.type[i]===type;
-       }
+  //Filtrado por nombre
+  filterName: (string, array) => {
+    return array.filter(objPokemon => {
+      return objPokemon.name === string;
+    });
+  },
+
+  //Filtrado por tipo
+  filterType: (array, type) => {
+    return array.filter(objPokemon => {
+      for (let i = 0; i < objPokemon.type.length; i++) {
+        return objPokemon.type[i] === type;
       }
-  });
-  // console.log(filterType);
-  return filterType;
-},
+    });
+  },
 
-//Filtrado por debilidad
-filterWeak:(array,type)=>{// Falta pasar el tipo para quee ejecute la funcion.
-  let filterType=array.filter((objPokemon)=> {
-      for(let i=0; i< objPokemon.weaknesses.length; i++){
-        if (objPokemon.weaknesses[i] === type) {
-          return objPokemon.weaknesses[i]===type;
-       }
+  //Filtrado por debilidad
+  filterWeak: (array, type) => {
+    return array.filter(objPokemon => {
+      for (let i = 0; i < objPokemon.weaknesses.length; i++) {
+        return objPokemon.weaknesses[i] === type;
       }
-  });
-  return filterType;
-},
+    });
+  },
 
-//Funcion de ordenamiento por nombre de forma ascendente
-orderedAscArray:(array)=>{
-let orderedArrayAsc=array.sort(function (a, b) {
-  if (a.name > b.name) {
-    return 1;
-  }
-  if (a.name < b.name) {
-    return -1;
-  }
-  return 0;
-});
-return orderedArrayAsc;
-},
-//Funcion de ordenamiento por nombre de forma ascendente
-orderedDescArray:(array)=>{
-let orderedArrayDesc=array.sort(function (a, b) {
-  if (a.name > b.name) {
-    return -1;
-  }
-  if (a.name < b.name) {
-    return 1;
-  }
- return 0;
-});
-return orderedArrayDesc;
-},
+  //Funcion de ordenamiento por nombre de forma ascendente
+  orderedAscArray: array => {
+    return array.sort(function(a, b) {
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      return 0;
+    });
+  },
 
-computeStats : (array)=>{
-  let averageHeight= 0;
-  array.forEach((objPokemon) => {
-    averageHeight=parseFloat(objPokemon.height.slice(0,4))+averageHeight ;
-  });
-  let avgHeight= averageHeight/array.length;
-  return avgHeight;
-},
+  //Funcion de ordenamiento por nombre de forma ascendente
+  orderedDescArray: array => {
+    return array.sort(function(a, b) {
+      if (a.name > b.name) {
+        return -1;
+      }
+      if (a.name < b.name) {
+        return 1;
+      }
+      return 0;
+    });
+  },
 
+  computeStats: array => {
+    let averageHeight = 0;
+    array.forEach(objPokemon => {
+      averageHeight = parseFloat(objPokemon.height.slice(0, 4)) + averageHeight;
+    });
+    return averageHeight / array.length;
+  }
 };
-
-

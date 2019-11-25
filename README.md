@@ -40,7 +40,7 @@ Después de realizar la encuesta, analizando las respuestas que nos proporcionar
 # Construido con
 Este proyecto está implementado con:
 
-JS(ES6) vanilla JavaScript.
+JS(ES6) vanilla JavaScript
 HTML 5
 CSS 3
 

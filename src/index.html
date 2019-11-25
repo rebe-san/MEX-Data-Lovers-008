@@ -1,108 +1,124 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tu layout se mostrará correctamente a una escala de 1:1 Ningún zoom será aplicado-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--vista de compatibilidad permite al usuario o al navegador establecer el modo de compatibilidad-->
+    <link rel="icon" type="image/img" href="./img/pokebola2.png" />
+    <!--rel="icon" es para crear un favicon-->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>¿Quién es ese pokémon?</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Tu layout se mostrará correctamente a una escala de 1:1 Ningún zoom será aplicado-->
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!--vista de compatibilidad permite al usuario o al navegador establecer el modo de compatibilidad-->
-  <link rel="icon" type="image/img" href="./img/pokebola2.png">
-  <!--rel="icon" es para crear un favicon-->
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>¿Quién es ese pokémon?</title>
-</head>
+  <body>
 
-<body>
-  <!-- header -->
-  <header>
-    <div class="logo-and-title-header" data-toggle="modal" data-target="#exampleModal">
-      <div id="logo-header">
-        <img src="img/pokebola46x40.png" alt="Inicio">
+    <!-- header -->
+    <header>
+      <div class="logo-and-title-header">
+        <figure id="logo-header">
+          <img src="img/pokebola46x40.png" alt="Inicio" />
+        </figure>
+        <p class="title-header">¿Quien es ese Pokemon?</p>
       </div>
-      <p class="title-header">¿Quien es ese Pokemon?</p>
-    </div>
-  </header>
-  <!-- nav   -->
-  <nav class="navigation">
-    <div>
-      <label for="input-name">
+    </header>
+    
+    <!-- nav   -->
+    <nav class="navigation">
+      <div>
+        <label for="input-name">
+          <input id="input-name" type="text" placeholder="Ejemplo:Pikachu" />
+          <button id="search">Buscar</button>
+        </label>
+      </div>
+      <div>
+        <ul class="menu">
+          <li>
+            <a href="#">Tipo</a>
+            <ul class="submenu-type" id="types-list">
+              <li><a href="#Grass" data-type="Grass">Grass</a></li>
+              <li><a href="#Poison" data-type="Poison">Poison</a></li>
+              <li><a href="#Fire" data-type="Fire">Fire</a></li>
+              <li><a href="#Flying" data-type="Flying">Flying</a></li>
+              <li><a href="#Water" data-type="Water">Water</a></li>
+              <li><a href="#Bug" data-type="Bug">Bug</a></li>
+              <li><a href="#Normal" data-type="Normal">Normal</a></li>
+              <li><a href="#Electric" data-type="Electric">Electric</a></li>
+              <li><a href="#Ground" data-type="Ground">Ground</a></li>
+              <li><a href="#Fighting" data-type="Fighting">Fighting</a></li>
+              <li><a href="#Psychic" data-type="Psychic">Psychic</a></li>
+              <li><a href="#Rock" data-type="Rock">Rock</a></li>
+              <li><a href="#Ice" data-type="Ice">Ice</a></li>
+              <li><a href="#Ghost" data-type="Ghost">Ghost</a></li>
+              <li><a href="#Dragon" data-type="Dragon">Dragon</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Debilidades</a>
+            <ul class="submenu-weakness" id="weakness-list">
+              <li><a href="#Grass" data-weakness="Grass">Grass</a></li>
+              <li><a href="#Poison" data-weakness="Poison">Poison</a></li>
+              <li><a href="#Fire" data-weakness="Fire">Fire</a></li>
+              <li><a href="#Flying" data-weakness="Flying">Flying</a></li>
+              <li><a href="#Water" data-weakness="Water">Water</a></li>
+              <li><a href="#Bug" data-weakness="Bug">Bug</a></li>
+              <li><a href="#Normal" data-weakness="Normal">Normal</a></li>
+              <li><a href="#Electric" data-weakness="Electric">Electric</a></li>
+              <li><a href="#Ground" data-weakness="Ground">Ground</a></li>
+              <li><a href="#Fighting" data-weakness="Fighting">Fighting</a></li>
+              <li><a href="#Psychic" data-weakness="Psychic">Psychic</a></li>
+              <li><a href="#Rock" data-weakness="Rock">Rock</a></li>
+              <li><a href="#Ice" data-weakness="Ice">Ice</a></li>
+              <li><a href="#Ghost" data-weakness="Ghost">Ghost</a></li>
+              <li><a href="#Dragon" data-weakness="Dragon">Dragon</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Ordenar</a>
+            <ul class="submenu-order" id="order">
+              <li><a href="#a-z" data-order="az" id="order-az">A-Z</a></li>
+              <li><a href="#z-a" data-order="za" id="order-za">Z-A</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#average-height" id="average-height">Altura Promedio</a>
+          </li>
+          <li><a href="#chart-types" id="type-chart">Grafica</a></li>
+        </ul>
+      </div>
+    </nav>
 
-        <input id="input-name" type="text" placeholder="Ejemplo:Pikachu">
-        <button id="search">Buscar</button>
-      </label>
-    </div>
-    <div>
-      <ul class="menu">
-        <li><a href="#">Tipo</a>
-          <ul class="submenu-type" id="types-list">
-            <li><a href="#Grass" data-type="Grass">Grass</a></li>
-            <li><a href="#Poison" data-type="Poison">Poison</a></li>
-            <li><a href="#Fire" data-type="Fire">Fire</a></li>
-            <li><a href="#Flying" data-type="Flying">Flying</a></li>
-            <li><a href="#Water" data-type="Water">Water</a></li>
-            <li><a href="#Bug" data-type="Bug">Bug</a></li>
-            <li><a href="#Normal" data-type="Normal">Normal</a></li>
-            <li><a href="#Electric" data-type="Electric">Electric</a></li>
-            <li><a href="#Ground" data-type="Ground">Ground</a></li>
-            <li><a href="#Fighting" data-type="Fighting">Fighting</a></li>
-            <li><a href="#Psychic" data-type="Psychic">Psychic</a></li>
-            <li><a href="#Rock" data-type="Rock">Rock</a></li>
-            <li><a href="#Ice" data-type="Ice">Ice</a></li>
-            <li><a href="#Ghost" data-type="Ghost">Ghost</a></li>
-            <li><a href="#Dragon" data-type="Dragon">Dragon</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Debilidades</a>
-          <ul class="submenu-weakness" id="weakness-list">
-            <li><a href="#Grass" data-weakness="Grass">Grass</a></li>
-            <li><a href="#Poison" data-weakness="Poison">Poison</a></li>
-            <li><a href="#Fire" data-weakness="Fire">Fire</a></li>
-            <li><a href="#Flying" data-weakness="Flying">Flying</a></li>
-            <li><a href="#Water" data-weakness="Water">Water</a></li>
-            <li><a href="#Bug" data-weakness="Bug">Bug</a></li>
-            <li><a href="#Normal" data-weakness="Normal">Normal</a></li>
-            <li><a href="#Electric" data-weakness="Electric">Electric</a></li>
-            <li><a href="#Ground" data-weakness="Ground">Ground</a></li>
-            <li><a href="#Fighting" data-weakness="Fighting">Fighting</a></li>
-            <li><a href="#Psychic" data-weakness="Psychic">Psychic</a></li>
-            <li><a href="#Rock" data-weakness="Rock">Rock</a></li>
-            <li><a href="#Ice" data-weakness="Ice">Ice</a></li>
-            <li><a href="#Ghost" data-weakness="Ghost">Ghost</a></li>
-            <li><a href="#Dragon" data-weakness="Dragon">Dragon</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Ordenar</a>
-          <ul class="submenu-order" id="order">
-            <li><a href="#a-z" data-order="az" id="order-az">A-Z</a></li>
-            <li><a href="#z-a" data-order="za" id="order-za">Z-A</a></li>
-          </ul>
-        </li>
-        <li><a href="#average-height" id="average-height">Altura Promedio</a></li>
-        <li><a href="#chart-types" id="type-chart">Grafica</a></li>
-      </ul>
-    </div>
-  </nav>
+    <!--Contenedor Principal-->
+    <main id="main-container"></main>
 
-  <!--Contenedor Principal-->
-  <main id="main-container">
-  </main>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="data.js"></script>
-  <script src="main.js"></script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
