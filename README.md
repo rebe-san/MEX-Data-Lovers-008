@@ -1,4 +1,5 @@
 # ¿Quién conoce ese pokémon?
+![pokemon](/img/Poligono.png)
 
 En la atualidad, la tendencia del mercado apunta a la nostalgía. Pensando en ello y tomando en cuenta que ambas colaboradoras del proyecto tenemos noción acerca de la serie Pokémon, decidimos realizar el proyecto sobre dicha data.
 
@@ -40,10 +41,28 @@ Después de realizar la encuesta, analizando las respuestas que nos proporcionar
 # Construido con
 Este proyecto está implementado con:
 
-JS(ES6) vanilla JavaScript
-HTML 5
-CSS 3
+- JS(ES6) vanilla JavaScript
+- HTML 5
+- CSS 3
 
+## Checklist
 
+-   [x] Usa VanillaJS.
+-   [x] No hace uso de `this`.
+-   [x] Pasa linter (`npm pretest`)
+-   [x] Pasa tests (`npm test`)
+-   [x] Incluye _Definición del producto_ clara e informativa en `README.md`.
+-   [x] Incluye historias de usuario en `README.md`.
+-   [x] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en `README.md`.
+-   [x] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad) en `README.md`.
+-   [x] Incluye el listado de problemas que detectaste a través de tests de usabilidad en el `README.md`.
+-   [x] UI: Muestra lista y/o tabla con datos y/o indicadores.
+-   [x] UI: Permite ordenar data por uno o más campos (asc y desc).
+-   [x] UI: Permite filtrar data en base a una condición.
+
+## Checklist (Hacker Edition)
+
+-   [x] Consume data de forma dinámica (`fetch()`).
+-   [x] Utiliza Librerías de graficas (`chart.js` ó `google chart`).
 
 
