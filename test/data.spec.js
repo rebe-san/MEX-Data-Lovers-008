@@ -54,7 +54,7 @@ const arrayOrderZa = [
   }
 ];
 
-//Tests para funciones (no sincronas)
+//Tests para funciones sincronas
 describe("dataFunctions", () => {
   it("functions es un objeto", () => {
     //Test para comprobar que dataFunctions es un objeto
